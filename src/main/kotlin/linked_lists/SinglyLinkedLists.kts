@@ -17,18 +17,14 @@ class LinkedList{
             this.tail?.next = Node(value)
             this.tail = this.tail?.next
         }
-        //10
+
         fun remove(index: Int){
             var i = 0
-
-            // cabeca é sempre o comeco da list
-            // current = blue(2,red)
-            //quero tirar red
             var current: Node? = this.head
             // 0
             while (i < index){
                 i+=1
-                //red
+
                 current = current?.next
             }
             if(current == this.head){
@@ -36,20 +32,18 @@ class LinkedList{
                 return
             }
 
-            //current = red
-            // current.next
+
             //verifica se estorou o limite da lista,quando o current já é a calda
             if(current?.next != null){
 
-                //current.next(red) == tail(green)
+
                 //se for remover a calda precisa substituir a refarencia da calda
                 if(current.next == this.tail){
                     // tail(green) = current(red)
                     this.tail = current
                 }
 
-                //current.next(red) = current.next(red).next(green)
-                //current(blue).next(red)
+
                 current.next = current.next?.next
             }
         }
