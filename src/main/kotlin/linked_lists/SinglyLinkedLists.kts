@@ -1,14 +1,6 @@
 package linked_lists
 
-fun main(){
-
-}
-
 class LinkedList{
-
-    // head                         tail
-    //blue(2,red), red(3,green), green(4, null)
-
     companion object{
         private var head: Node? = Node(-1)
         private var tail: Node? = this.head
