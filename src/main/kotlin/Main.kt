@@ -7,9 +7,12 @@ fun main() {
 
    val linkedList = LinkedListCycle()
 
-    linkedList.insertEnd(10)
-    linkedList.insertEnd(20)
-    linkedList.insertEnd(40)
+   linkedList.apply {
+    insertEnd(10)
+    insertEnd(20)
+    insertEnd(40)
+    initCycle()
+   }
     val hasCycle  = linkedList.hasCycle()
     println(hasCycle)
 

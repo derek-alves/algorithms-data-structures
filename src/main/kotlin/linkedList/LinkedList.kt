@@ -9,6 +9,8 @@ open class LinkedList(currentHead: Node = Node(-1)){
         this.tail = this.tail?.next
     }
 
+
+
     open  fun remove(index: Int){
         var i = 0
         var current: Node? = this.head

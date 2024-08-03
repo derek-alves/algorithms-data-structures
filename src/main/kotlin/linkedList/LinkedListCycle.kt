@@ -13,4 +13,9 @@ class LinkedListCycle(): LinkedList() {
         }
         return false
     }
+
+     fun initCycle(){
+        this.tail?.next = Node(100, next = head)
+        this.tail = this.tail?.next
+    }
 }
