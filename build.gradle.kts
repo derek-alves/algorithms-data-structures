@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompilerOptions
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     kotlin("jvm") version "2.0.0"
 }
@@ -15,8 +18,19 @@ dependencies {
 }
 
 tasks.test {
+
     useJUnitPlatform()
 }
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask<KotlinJvmCompilerOptions>>().configureEach {
+    compilerOptions {
+        freeCompilerArgs.add("-Xuse-fir-lt=false")
+    }
+}
+
+
+
 kotlin {
     jvmToolchain(17)
 }
+
